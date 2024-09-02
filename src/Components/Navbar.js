@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black text-white p-4">
+    <nav className="bg-black text-white sm:p-4 md:p-5">
       <div className=" mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
@@ -27,6 +27,7 @@ const Navbar = () => {
 
           {/* Dropdown for Services */}
           <div className="relative group">
+          <p className="bg-[#a656f7] text-white px-1 text-[10px] absolute right-0 top-[-12px] rounded-sm">New</p>
             <Link
               to="/servise"
               className="flex items-center hover:text-gray-400 transition duration-300"
@@ -83,11 +84,11 @@ const Navbar = () => {
 
         {/* Contact and Quote Button */}
         <div className="hidden md:flex space-x-4 items-center">
-          <button className="bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-2 rounded-lg hover:from-purple-600 hover:to-blue-600 transition duration-300">
+          <button className="bg-gradient-to-r from-purple-500 to-blue-500 px-4 py-2 rounded-sm hover:from-purple-600 hover:to-blue-600 transition duration-300">
             Get A Quote
           </button>
           <div className="flex items-center">
-            <FaPhone className="mr-2 bg-[#2334de] rounded-full text-white h-[40px] w-[40px] leading-[16px] text-[12px]" />
+            <FaPhone className="mr-2 bg-[#2334de] rounded-full text-white h-[35px] w-[35px] leading-[16px] p-2 text-[12px]" />
             <div>
               <p className="text-[11px]">Call Any Time</p>
               <p className="text-[13px] font-semibold">+91 89050 54141</p>
