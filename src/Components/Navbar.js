@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black text-white p-4">
-      <div className="md:container mx-auto flex justify-between items-center">
+      <div className=" mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
           <div className="text-2xl font-bold">MAXIFY</div>
