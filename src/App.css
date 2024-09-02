@@ -115,3 +115,17 @@ body {
   font-weight: 900;
   font-style: italic;
 }
+
+.slider-card:hover .slider-card-bottom{
+  padding-left: 40px !important;
+  padding-top: 40px !important;
+  padding-bottom: 20px !important;
+  padding-right: 20px !important;
+  font-size: 40px !important;
+}
+@media (max-width:800px) {
+  .next{
+    display: none;
+  }
+  
+}
