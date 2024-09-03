@@ -21,7 +21,11 @@ import { TbSeo } from "react-icons/tb";
 import { MdContentPasteSearch } from "react-icons/md";
 import { IoMdPlay } from "react-icons/io";
 import { IoIosPlay } from "react-icons/io";
-import { FaHandHoldingMedical, FaStethoscope, FaHeartbeat } from 'react-icons/fa';
+import {
+  FaHandHoldingMedical,
+  FaStethoscope,
+  FaHeartbeat,
+} from "react-icons/fa";
 import { LuFocus } from "react-icons/lu";
 import { BsGraphUpArrow } from "react-icons/bs";
 import { MdSupportAgent } from "react-icons/md";
@@ -185,9 +189,18 @@ const sections = {
 const sectionKeys = Object.keys(sections);
 
 const benifits = [
-  { text: 'Prominent Healthcare Services', icon: <FaHandHoldingMedical size={30} className="text-[#2334de]" /> },
-  { text: 'Advanced Medical Care', icon: <FaStethoscope size={30} className="text-[#2334de]" /> },
-  { text: 'Comprehensive Heart Care', icon: <FaHeartbeat size={30} className="text-[#2334de]" /> },
+  {
+    text: "Prominent Healthcare Services",
+    icon: <FaHandHoldingMedical size={30} className="text-[#2334de]" />,
+  },
+  {
+    text: "Advanced Medical Care",
+    icon: <FaStethoscope size={30} className="text-[#2334de]" />,
+  },
+  {
+    text: "Comprehensive Heart Care",
+    icon: <FaHeartbeat size={30} className="text-[#2334de]" />,
+  },
 ];
 const Home = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -205,12 +218,12 @@ const Home = () => {
 
   const { heading, points } = sections[sectionKeys[currentSectionIndex]];
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentSectionIndex(
-        (prevIndex) => (prevIndex + 1) % sectionKeys.length
-      );
-    }, 2000);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentSectionIndex(
+  //       (prevIndex) => (prevIndex + 1) % sectionKeys.length
+  //     );
+  //   }, 2000);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -233,7 +246,9 @@ const Home = () => {
           <span className="bg-[#2334de] text-[10px] text-white px-3 py-1">
             IT SOLUTIONS ---
           </span>
-          <h2 className="text-6xl md:text-5xl sm:text-4xl mt-9 font-semibold text-black">Welcome To</h2>
+          <h2 className="text-6xl md:text-5xl sm:text-4xl mt-9 font-semibold text-black">
+            Welcome To
+          </h2>
           <h1 className="text-6xl md:text-5xl sm:text-4xl mt-2  font-semibold text-[#2334de]">
             Maxify Solutions
           </h1>
@@ -274,7 +289,11 @@ const Home = () => {
             alt="Left Side"
             className="h-auto right-0 bottom-0 w-[40%] absolute"
           />
-          <img src={img2} alt="Left Side" className="w-[80%] object-cover h-auto" />
+          <img
+            src={img2}
+            alt="Left Side"
+            className="w-[80%] object-cover h-auto"
+          />
         </div>
 
         {/* Right Side - Visible in Mobile View */}
@@ -298,16 +317,20 @@ const Home = () => {
 
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 mb-6">
             <div className="flex-1 flex gap-3 items-center text-left p-4 rounded-md">
-            <div>
-              <MdImportantDevices className="text-[30px] text-[#2334de]" />
+              <div>
+                <MdImportantDevices className="text-[30px] text-[#2334de]" />
               </div>
-              <p className="font-semibold lg:text-[12px] md:text-[12px]">Custom software development.</p>
+              <p className="font-semibold lg:text-[12px] md:text-[12px]">
+                Custom software development.
+              </p>
             </div>
             <div className="flex-1 flex gap-3 items-center text-left p-4 rounded-md">
-            <div>
-              <AiOutlineSolution className="text-[30px] text-[#2334de]" />
+              <div>
+                <AiOutlineSolution className="text-[30px] text-[#2334de]" />
               </div>
-              <p className="font-semibold lg:text-[12px] md:text-[12px]">Marketing Solution</p>
+              <p className="font-semibold lg:text-[12px] md:text-[12px]">
+                Marketing Solution
+              </p>
             </div>
           </div>
           <p className="text-justify font-semibold text-sm">
@@ -444,10 +467,10 @@ const Home = () => {
             <div className="mt-8 space-y-8">
               {points.map((point, index) => (
                 <div key={index} className="flex items-start gap-3">
-                <div>
-                  <div className="bg-blue-600 text-white h-10 w-10 flex items-center justify-center rounded-full">
-                    {point.number}
-                  </div>
+                  <div>
+                    <div className="bg-blue-600 text-white h-10 w-10 flex items-center justify-center rounded-full">
+                      {point.number}
+                    </div>
                   </div>
                   <div>
                     <h4 className="text-lg font-semibold">{point.title}</h4>
@@ -509,9 +532,9 @@ const Home = () => {
           </p>
 
           <div className="flex justify-between shadow-md p-4 mb-6 border-t-[1px] border-r-[1px] border-l-[3px] border-l-[#2334de]">
-      <p className="font-semibold">{benifits[index].text}</p>
-      {benifits[index].icon}
-    </div>
+            <p className="font-semibold">{benifits[index].text}</p>
+            {benifits[index].icon}
+          </div>
 
           <div className="mt-8">
             <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
@@ -525,7 +548,11 @@ const Home = () => {
       <div className="flex flex-col md:flex-row md:space-x-4 mt-8 w-[100%] mx-auto md:w-[80%]">
         {/* Left Side - Hidden in Mobile View */}
         <div className="w-full md:w-1/2 justify-center relative sm:hidden lg:flex">
-          <img src={img3} alt="Left Side" className="w-[100%] object-cover h-auto" />
+          <img
+            src={img3}
+            alt="Left Side"
+            className="w-[100%] object-cover h-auto"
+          />
         </div>
 
         {/* Right Side - Visible in Mobile View */}
@@ -544,8 +571,8 @@ const Home = () => {
 
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 mb-6">
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
-            <div>
-              <LuFocus className="text-[30px] text-[#2334de]" />
+              <div>
+                <LuFocus className="text-[30px] text-[#2334de]" />
               </div>
               <div>
                 <h3 className="text-sm font-[500] text-black">
@@ -559,8 +586,8 @@ const Home = () => {
               </div>
             </div>
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
-            <div>
-              <BsGraphUpArrow className="text-[30px] text-[#2334de]" />
+              <div>
+                <BsGraphUpArrow className="text-[30px] text-[#2334de]" />
               </div>
               <div>
                 <h3 className="text-sm font-[500] text-black">
@@ -576,34 +603,31 @@ const Home = () => {
           </div>
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 mb-6">
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
-            <div>
-              <MdSupportAgent className="text-[30px] text-[#2334de]" />
+              <div>
+                <MdSupportAgent className="text-[30px] text-[#2334de]" />
               </div>
               <div>
                 <h3 className="text-sm font-[500] text-black">
-                Ongoing Support:
+                  Ongoing Support:
                 </h3>
                 <p className="text-[10px]  text-justify">
-                Our dedication to your success does
-not end when we offer our services. We
-provide ongoing support and
-maintenance to ensure that your
-solutions operate at their best.
+                  Our dedication to your success does not end when we offer our
+                  services. We provide ongoing support and maintenance to ensure
+                  that your solutions operate at their best.
                 </p>
               </div>
             </div>
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
-            <div>
-              <GoCodeReview className="text-[30px] text-[#2334de]" />
+              <div>
+                <GoCodeReview className="text-[30px] text-[#2334de]" />
               </div>
               <div>
                 <h3 className="text-sm font-[500] text-black">
-                Innovative Solutions:
+                  Innovative Solutions:
                 </h3>
                 <p className="text-[10px] text-justify">
-                We stay on top of trends by providing
-modern technology that keeps you
-successful in your business.
+                  We stay on top of trends by providing modern technology that
+                  keeps you successful in your business.
                 </p>
               </div>
             </div>

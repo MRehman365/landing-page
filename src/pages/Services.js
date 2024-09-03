@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import "./main.css";
 import { BiPhoneCall } from "react-icons/bi";
+import { FaArrowRight } from "react-icons/fa";
 import img1 from "../Assets/services/1.webp";
 import img4 from "../Assets/services/4.webp";
 import img5 from "../Assets/services/5.webp";
@@ -7,9 +9,56 @@ import img7 from "../Assets/services/7.webp";
 import img8 from "../Assets/services/8.webp";
 import img9 from "../Assets/services/9.webp";
 import img10 from "../Assets/services/10.webp";
-import ServiceCard from "../Components/ServiceCard";
+import icon from "../Assets/services/icon.svg";
 
 const Services = () => {
+  // Array to hold service data
+  const serviceData = [
+    {
+      imageSrc: img7,
+      title: "Custom Website Design And Development",
+      description:
+        "Our custom website design and development services set us apart as the best website development company in Noida. We do not believe in universally applicable solutions. Instead, we take the time to understand your company's goals, target audience, and brand identity while designing a website that represents your concept.",
+      hoverText: "Learn More",
+      icone: icon,
+      key1: "Tailored Designs: We create unique, visually appealing designs that resonate with your brand.",
+      key2: "Responsive Development: Our websites are fully responsive, ensuring a seamless user experience across all devices.",
+      key3: "User-Centric Approach: We focus on creating websites that are not only attractive but also easy to navigate, keeping your audience engaged.",
+    },
+    {
+      imageSrc: img8,
+      title: "E-Commerce Website Development",
+      description:
+        "In the modern age of online purchasing, a reputable e-commerce platform is necessary. As the best web development company in Noida, we offer top-notch e-commerce website development services that help you sell your products online with ease.",
+      hoverText: "Discover More",
+      key1: "Secure Payment Gateways: We integrate reliable and secure payment options to protect your customers' data.",
+      key2: "Custom Cart Solutions: Our shopping cart solutions are designed to provide a smooth checkout process, enhancing user satisfaction.",
+      key3: "Inventory Management: We build systems that help you manage your inventory efficiently, reducing the chances of stockouts or overstocking",
+    },
+    {
+      imageSrc: img9,
+      title: "CMS Development",
+      description:
+        "Content Management Systems (CMS) make it easy for you to update your website content without needing technical expertise. At Maxify Solutions, the leading website development company in Noida, we specialize in CMS development that empowers you to manage your site effectively.",
+      hoverText: "Explore Features",
+      key1: "User-Friendly Interface: Our CMS platforms are designed with simplicity in mind, allowing you to make updates with ease.",
+      key2: "Custom Modules: We develop custom modules tailored to your specific business needs.",
+      key3: "SEO-Friendly: Our CMS solutions are optimized for search engines, helping you rank higher in search results.",
+    },
+    {
+      imageSrc: img10,
+      title: "Website Maintenance And Support",
+      description:
+        "A website is never truly finished; it requires regular updates and maintenance to stay relevant and functional. As the best web development company in Noida, we offer ongoing maintenance and support services to keep your website running smoothly.",
+      hoverText: "Check Details",
+      key1: "Regular Updates: We ensure your website is always up-to-date with the latest features and security patches.",
+      key2: "24/7 Support: Our team is available around the clock to address any issues or concerns you may have.",
+      key3: "Performance Optimization: We continuously monitor your website’s performance and make necessary adjustments to improve speed and reliability.",
+    },
+  ];
+
+  const [shoCcontent, setshoCcontent] = useState(false);
+
   return (
     <div>
       {/* hero section */}
@@ -136,7 +185,7 @@ const Services = () => {
       {/* our servioces section */}
 
       <div>
-        <div className="bg-blue-900 py-12 px-8 md:px-16">
+        <div className="bg-blue-900 pt-12 pb-1 px-8 md:px-16">
           <h3 className="text-white text-center text-sm">// Our Services:</h3>
           <div className="w-[60%] mx-auto">
             <h2 className="text-3xl md:text-3xl font-semibold text-white text-center mb-12 ">
@@ -144,30 +193,60 @@ const Services = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <ServiceCard
-              imageSrc={img7}
-              title="Custom Website Design And Development"
-              description="Our custom website design and development services set us apart as the best website development company in Noida. We do not believe in universally applicable solutions. Instead, we take the time to understand your company's goals, target audience, and brand identity while designing a website that represents your concept."
-              hoverText="Learn More"
-            />
-            <ServiceCard
-              imageSrc={img8}
-              title="E-Commerce Website Development"
-              description="In the modern age of online purchasing, a reputable e-commerce platform is necessary. As the best web development company in Noida, we offer top-notch e-commerce website development services that help you sell your products online with ease."
-              hoverText="Discover More"
-            />
-            <ServiceCard
-              imageSrc={img9}
-              title="CMS Development"
-              description="Content Management Systems (CMS) make it easy for you to update your website content without needing technical expertise. At Maxify Solutions, the leading website development company in Noida, we specialize in CMS development that empowers you to manage your site effectively."
-              hoverText="Explore Features"
-            />
-            <ServiceCard
-              imageSrc={img10}
-              title="Website Maintenance And Support"
-              description="A website is never truly finished; it requires regular updates and maintenance to stay relevant and functional. As the best web development company in Noida, we offer ongoing maintenance and support services to keep your website running smoothly."
-              hoverText="Check Details"
-            />
+            {serviceData.map((service, index) => (
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img
+                  src={service.imageSrc}
+                  alt=""
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="px-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {serviceData.map((service, index) => (
+              <div className="">
+                <div className="p-6 group-hover-hidden w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between ">
+                  <div className="group-hover-hidden transition duration-300">
+                    <div className="flex justify-between">
+                      <h3 className="text-[10px] bg-blue-600 text-center text-white rounded-lg px-3 py-1 mb-4 w-[70%]">
+                        {service.title}
+                      </h3>
+                      <div className="mt-[-10px]">
+                        <img src={icon} alt="" />
+                      </div>
+                    </div>
+                    <p className="text-gray-700 text-[12px] text-justify mb-6">
+                      {service.description}
+                    </p>
+                  </div>
+                  <div className="groupclass">
+                    <div
+                      className=" flex flex-col cursor-pointer justify-end group-hover-hidden transition duration-300"
+                      // onMouseEnter={() => setshoCcontent(true)}
+                    >
+                      <div className="flex items-center ">
+                        <span className="text-sm font-medium text-gray-900 mr-2">
+                          Key Features:
+                        </span>
+                        <button className="text-white p-1 rounded-full bg-blue-800 transition duration-300">
+                          <FaArrowRight />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="show-on-hover p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between">
+                  <ul className="text-gray-700 text-[12px] flex flex-col gap-3 list-disc">
+                    <li>{service.key1}</li>
+                    <li>{service.key2}</li>
+                    <li>{service.key3}</li>
+                  </ul>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
