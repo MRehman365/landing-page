@@ -1,0 +1,18 @@
+/* Hide the original content when hovering over the groupclass */
+.groupclass:hover .group-hover-hidden {
+  display: none; /* Hides content on hover */
+}
+
+/* Show the alternative content on hover */
+.groupclass:hover .show-on-hover {
+  display: block; /* Shows content on hover */
+}
+
+/* Default states */
+.group-hover-hidden {
+  display: block; /* Content is visible by default */
+}
+
+.show-on-hover {
+  display: none; /* Hidden by default */
+}
