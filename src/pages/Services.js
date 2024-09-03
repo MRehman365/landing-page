@@ -206,50 +206,48 @@ const Services = () => {
           </div>
         </div>
         <div className="px-14">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {serviceData.map((service, index) => (
-              <div className="">
-                <div className="p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between ">
-                  <div className="group-hover-hidden transition duration-300">
-                    <div className="flex justify-between">
-                      <h3 className="text-[10px] bg-blue-600 text-center text-white rounded-lg px-3 py-1 mb-4 w-[70%]">
-                        {service.title}
-                      </h3>
-                      <div className="mt-[-10px]">
-                        <img src={icon} alt="" />
-                      </div>
-                    </div>
-                    <p className="text-gray-700 text-[12px] text-justify mb-6">
-                      {service.description}
-                    </p>
-                  </div>
-                  <div className="groupclass">
-                    <div
-                      className=" flex flex-col justify-end group-hover-hidden transition duration-300"
-                      // onMouseEnter={() => setshoCcontent(true)}
-                    >
-                      <div className="flex items-center ">
-                        <span className="text-sm font-medium text-gray-900 mr-2">
-                          Key Features:
-                        </span>
-                        <button className="text-white p-1 rounded-full bg-blue-800 transition duration-300">
-                          <FaArrowRight />
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="show-on-hover p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between">
-                  <ul className="text-gray-700 text-[12px] flex flex-col gap-3 list-disc">
-                    <li>{service.key1}</li>
-                    <li>{service.key2}</li>
-                    <li>{service.key3}</li>
-                  </ul>
-                </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {serviceData.map((service, index) => (
+      <div key={index} className="relative group">
+        <div className="p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between transition-all duration-300">
+          {/* Main Content */}
+          <div className="main-content">
+            <div className="flex justify-between">
+              <h3 className="text-[10px] bg-blue-600 text-center text-white rounded-lg px-3 py-1 mb-4 w-[70%]">
+                {service.title}
+              </h3>
+              <div className="mt-[-10px]">
+                <img src={icon} alt="" />
               </div>
-            ))}
+            </div>
+            <p className="text-gray-700 text-[12px] text-justify mb-6">
+              {service.description}
+            </p>
+          </div>
+
+          {/* Hidden Content */}
+          <div className="show-content hidden w-[100%] h-[21rem] rounded-lg z-20 flex-col justify-between group-hover:flex">
+            <ul className="text-gray-700 text-[12px] flex flex-col gap-3 list-disc text-justify">
+              <li>{service.key1}</li>
+              <li>{service.key2}</li>
+              <li>{service.key3}</li>
+            </ul>
+          </div>
+
+          <div className="flex items-center button-container">
+            <span className="text-sm font-medium text-gray-900 mr-2">
+              Key Features:
+            </span>
+            <button className="text-white p-1 rounded-full bg-blue-800 transition duration-300">
+              <FaArrowRight />
+            </button>
           </div>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
       </div>
     </div>
   );
