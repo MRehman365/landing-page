@@ -10,6 +10,7 @@ import img8 from "../Assets/services/8.webp";
 import img9 from "../Assets/services/9.webp";
 import img10 from "../Assets/services/10.webp";
 import icon from "../Assets/services/icon.svg";
+// import ServiceCard from "../Components/ServiceCard";
 
 const Services = () => {
   // Array to hold service data
@@ -208,7 +209,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {serviceData.map((service, index) => (
               <div className="">
-                <div className="p-6 group-hover-hidden w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between ">
+                <div className="p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between ">
                   <div className="group-hover-hidden transition duration-300">
                     <div className="flex justify-between">
                       <h3 className="text-[10px] bg-blue-600 text-center text-white rounded-lg px-3 py-1 mb-4 w-[70%]">
@@ -224,7 +225,7 @@ const Services = () => {
                   </div>
                   <div className="groupclass">
                     <div
-                      className=" flex flex-col cursor-pointer justify-end group-hover-hidden transition duration-300"
+                      className=" flex flex-col justify-end group-hover-hidden transition duration-300"
                       // onMouseEnter={() => setshoCcontent(true)}
                     >
                       <div className="flex items-center ">
