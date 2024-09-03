@@ -234,7 +234,7 @@ const Home = () => {
           <p className="md:text-3xl sm:text-lg mt-4 font-semibold text-black">
             Your Partner For Digital Transformation
           </p>
-          <Link className="mt-6 inline-block bg-[#2334de] text-white py-3 text-[14px] font-[300] px-5 rounded-[5px] hover:[#2334de]/80">
+          <Link to="/app" className="mt-6 inline-block bg-[#2334de] text-white py-3 text-[14px] font-[300] px-5 rounded-[5px] hover:[#2334de]/80">
             Get Started Now
           </Link>
         </div>
@@ -274,7 +274,7 @@ const Home = () => {
         {/* Right Side - Visible in Mobile View */}
         <div className="w-full md:w-1/2 p-4 md:p-8 sm:px-3 md:px-[30px]">
           <p className="text-[18px] font-[500] text-[gray]">
-            <span className="text-[blue]">//</span> Get to Now
+            <span className="text-[#2334de]">//</span> Get to Now
           </p>
           <h1 className="text-2xl md:text-4xl font-bold mb-1">
             Maxify Solutions
@@ -431,7 +431,7 @@ const Home = () => {
         </div>
         <div className="flex flex-col md:flex-row items-center bg-black text-white py-12 sm:px-3 md:px-0 relative">
           <div className="md:w-1/2  min-h-[400px] md:px-5">
-            <h3 className="text-blue-500">
+            <h3 className="text-[#2334de]">
               // <span className="text-white"> What We Offer!</span>
             </h3>
             <h1 className="text-4xl md:text-3xl font-bold mt-4">{heading}</h1>
@@ -439,7 +439,7 @@ const Home = () => {
               {points.map((point, index) => (
                 <div key={index} className="flex items-start gap-3">
                 <div>
-                  <div className="bg-blue-600 text-white h-10 w-10 flex items-center justify-center rounded-full">
+                  <div className="bg-[#2334de] text-white h-10 w-10 flex items-center justify-center rounded-full">
                     {point.number}
                   </div>
                   </div>
