@@ -88,19 +88,22 @@ const sections = {
       {
         number: "01",
         title: "Deep Customization",
-        description: "Tailored software solutions that perfectly align with your specific business processes and needs."
+        description:
+          "Tailored software solutions that perfectly align with your specific business processes and needs.",
       },
       {
         number: "02",
         title: "Agile Development",
-        description: "Faster project delivery with flexibility to adapt to changing requirements."
+        description:
+          "Faster project delivery with flexibility to adapt to changing requirements.",
       },
       {
         number: "03",
         title: "Comprehensive Support",
-        description: "Extensive testing and ongoing post-launch support to ensure long-term success and scalability."
-      }
-    ]
+        description:
+          "Extensive testing and ongoing post-launch support to ensure long-term success and scalability.",
+      },
+    ],
   },
   digitalMarketing: {
     heading: "Digital Marketing",
@@ -108,19 +111,22 @@ const sections = {
       {
         number: "01",
         title: "SEO Optimization",
-        description: "Improve your search engine ranking with our tailored SEO strategies."
+        description:
+          "Improve your search engine ranking with our tailored SEO strategies.",
       },
       {
         number: "02",
         title: "Social Media Marketing",
-        description: "Engage with your audience through targeted social media campaigns."
+        description:
+          "Engage with your audience through targeted social media campaigns.",
       },
       {
         number: "03",
         title: "Content Creation",
-        description: "Create compelling content that resonates with your target audience."
-      }
-    ]
+        description:
+          "Create compelling content that resonates with your target audience.",
+      },
+    ],
   },
   webDevelopment: {
     heading: "Web Development",
@@ -128,19 +134,22 @@ const sections = {
       {
         number: "01",
         title: "Responsive Design",
-        description: "Build websites that look great on all devices with responsive design."
+        description:
+          "Build websites that look great on all devices with responsive design.",
       },
       {
         number: "02",
         title: "E-commerce Solutions",
-        description: "Develop robust e-commerce platforms to boost your online sales."
+        description:
+          "Develop robust e-commerce platforms to boost your online sales.",
       },
       {
         number: "03",
         title: "Custom Web Applications",
-        description: "Create custom web applications tailored to your business needs."
-      }
-    ]
+        description:
+          "Create custom web applications tailored to your business needs.",
+      },
+    ],
   },
   itConsulting: {
     heading: "IT Consulting",
@@ -148,39 +157,41 @@ const sections = {
       {
         number: "01",
         title: "Expert Guidance",
-        description: "Receive expert advice to optimize your IT infrastructure."
+        description:
+          "Receive expert advice to optimize your IT infrastructure.",
       },
       {
         number: "02",
         title: "Strategic Planning",
-        description: "Develop IT strategies that align with your business goals."
+        description:
+          "Develop IT strategies that align with your business goals.",
       },
       {
         number: "03",
         title: "Risk Management",
-        description: "Identify and mitigate IT risks to ensure business continuity."
-      }
-    ]
+        description:
+          "Identify and mitigate IT risks to ensure business continuity.",
+      },
+    ],
   },
 };
-
 
 const sectionKeys = Object.keys(sections);
 
 const Home = () => {
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentSectionIndex(
+        (prevIndex) => (prevIndex + 1) % sectionKeys.length
+      );
+    }, 2000);
 
-    const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-  
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        setCurrentSectionIndex((prevIndex) => (prevIndex + 1) % sectionKeys.length);
-      }, 2000);
-  
-      return () => clearInterval(intervalId);
-    }, []);
-  
-    const { heading, points } = sections[sectionKeys[currentSectionIndex]];
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const { heading, points } = sections[sectionKeys[currentSectionIndex]];
 
   return (
     <div>
@@ -380,63 +391,68 @@ const Home = () => {
 
       {/*  */}
       <div>
-      <div className="sm:none md:w-[45%] md:flex justify-end">
-      {/* <IoMdPlay size={14} className="bg-[red] text-white h-[80px] w-[80px]"/> */}
-      <IoIosPlay size={20} className="bg-[red] text-white h-[80px] w-[80px]"/>
-      </div>
-      <div className="flex flex-col md:flex-row items-center bg-black text-white py-12 sm:px-3 md:px-0 relative">
-      <div className="md:w-1/2  md:px-20">
-        <h3 className="text-blue-500">// <span className="text-white"> What We Offer!</span></h3>
-        <h1 className="text-4xl md:text-5xl font-bold mt-4">{heading}</h1>
-        <div className="mt-8 space-y-8">
-          {points.map((point, index) => (
-            <div key={index} className="flex items-start gap-3">
-              <div className="bg-blue-600 text-white h-10 w-10 flex items-center justify-center rounded-full">
-                {point.number}
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold">{point.title}</h4>
-                <p className="text-gray-400">{point.description}</p>
-              </div>
+        <div className="sm:none md:w-[45%] md:flex justify-end">
+          {/* <IoMdPlay size={14} className="bg-[red] text-white h-[80px] w-[80px]"/> */}
+          <IoIosPlay
+            size={20}
+            className="bg-[red] text-white h-[80px] w-[80px]"
+          />
+        </div>
+        <div className="flex flex-col md:flex-row items-center bg-black text-white py-12 sm:px-3 md:px-0 relative">
+          <div className="md:w-1/2  md:px-20">
+            <h3 className="text-blue-500">
+              // <span className="text-white"> What We Offer!</span>
+            </h3>
+            <h1 className="text-4xl md:text-5xl font-bold mt-4">{heading}</h1>
+            <div className="mt-8 space-y-8">
+              {points.map((point, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <div className="bg-blue-600 text-white h-10 w-10 flex items-center justify-center rounded-full">
+                    {point.number}
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-semibold">{point.title}</h4>
+                    <p className="text-gray-400">{point.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className="w-full md:h-[600px] flex justify-center mt-8 md:mt-0 lg:absolute">
+            <div className=" lg:absolute right-[100px] top-[-30px]">
+              <img
+                src={img1}
+                alt={`${heading} Illustration`}
+                className="w-full md:w-full"
+              />
+            </div>
+          </div>
         </div>
       </div>
-      <div className="w-full md:h-[600px] flex justify-center mt-8 md:mt-0 lg:absolute">
-      <div className=" lg:absolute right-[100px] top-[-30px]">
-        <img
-          src={img1} 
-          alt={`${heading} Illustration`}
-          className="w-full md:w-full"
-        />
-        </div>
-      </div>
-    </div>
-    </div>
 
-    {/* Company benifits */}
-    <div className="flex flex-col md:flex-row md:space-x-4 mt-8 w-[100%] mx-auto md:w-[80%]">
+      {/* Company benifits */}
+      <div className="flex flex-col md:flex-row md:space-x-4 mt-8 w-[100%] mx-auto md:w-[80%]">
         {/* Left Side - Hidden in Mobile View */}
         <div className="flex w-full md:w-1/2 justify-center items-center relative gap-3">
-        <div className="flex flex-col gap-3">
-          <img
-            src={img2}
-            alt={`${heading} Illustration`}
-            className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
-          />
-          <img
-            src={img2}
-            alt={`${heading} Illustration`}
-            className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
-          />
-        </div>
-        <div>
-        <img
-            src={img2}
-            alt={`${heading} Illustration`}
-            className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
-          />
-        </div>
+          <div className="flex flex-col gap-3">
+            <img
+              src={img2}
+              alt={`${heading} Illustration`}
+              className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
+            />
+            <img
+              src={img2}
+              alt={`${heading} Illustration`}
+              className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
+            />
+          </div>
+          <div>
+            <img
+              src={img2}
+              alt={`${heading} Illustration`}
+              className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
+            />
+          </div>
         </div>
 
         {/* Right Side - Visible in Mobile View */}
@@ -445,24 +461,23 @@ const Home = () => {
             <span className="text-[#ff0000]">//</span> Company Benifits
           </p>
           <h1 className="text-2xl md:text-4xl font-bold mb-1">
-          Industry Solutions
-          and Expertise.
+            Industry Solutions and Expertise.
           </h1>
           <p className="text-sm text-justify  text-gray-600 mb-6">
-          Maxify Solutions provides services across all aspects of industries,
-supporting businesses in Noida and beyond to achieve their goals
-through customized solutions along with skilled assistance.
+            Maxify Solutions provides services across all aspects of industries,
+            supporting businesses in Noida and beyond to achieve their goals
+            through customized solutions along with skilled assistance.
           </p>
 
           <div className="flex justify-between shadow-md p-4 mb-6 border-t-[1px] border-r-[1px] border-l-[3px] border-l-[#2334de]">
-          <p className="font-semibold">Prominent Healthcare Services</p>
-          <FaHandHoldingMedical size={30} className="text-[#2334de]" />
+            <p className="font-semibold">Prominent Healthcare Services</p>
+            <FaHandHoldingMedical size={30} className="text-[#2334de]" />
           </div>
-        
+
           <div className="mt-8">
-              <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
-                Explore now
-              </button>
+            <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
+              Explore now
+            </button>
           </div>
         </div>
       </div>
@@ -490,39 +505,42 @@ through customized solutions along with skilled assistance.
         {/* Right Side - Visible in Mobile View */}
         <div className="w-full md:w-1/2 p-4 md:p-8 sm:px-3 md:px-[30px]">
           <span className="text-[12px] font-[500] px-4 py-0 bg-[#2334de] text-white">
-             Why ------
+            Why ------
           </span>
           <h1 className="text-2xl md:text-3xl font-bold mb-1">
-          Why Should You Choose
-          Maxify Solutions?
+            Why Should You Choose Maxify Solutions?
           </h1>
           <p className="text-sm text-justify  text-gray-600 mb-6 leading-7">
-          Experienced Team: Our team of experts has years of experience in
-technology and business strategy. We re dedicated to providing new
-solutions that will help your company succeed.
+            Experienced Team: Our team of experts has years of experience in
+            technology and business strategy. We re dedicated to providing new
+            solutions that will help your company succeed.
           </p>
 
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 mb-6">
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
               <MdImportantDevices className="text-[60px] text-[#2334de]" />
               <div>
-              <h3 className="text-sm font-[500] text-black">Client-Focused Approach:</h3>
-              <p className="text-[10px]">We focus on your success. We
-work closely with you to
-understand your goals and modify
-our services to meet your
-particular needs.</p>
+                <h3 className="text-sm font-[500] text-black">
+                  Client-Focused Approach:
+                </h3>
+                <p className="text-[10px]">
+                  We focus on your success. We work closely with you to
+                  understand your goals and modify our services to meet your
+                  particular needs.
+                </p>
               </div>
             </div>
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
               <MdImportantDevices className="text-[60px] text-[#2334de]" />
               <div>
-              <h3 className="text-sm font-[500] text-black">Proven Success:</h3>
-              <p className="text-[10px]">We take interest in our track record of
-offering high-quality solutions resulting
-in measurable outcomes. Our primary
-goal is to increase the value of your
-company.</p>
+                <h3 className="text-sm font-[500] text-black">
+                  Proven Success:
+                </h3>
+                <p className="text-[10px]">
+                  We take interest in our track record of offering high-quality
+                  solutions resulting in measurable outcomes. Our primary goal
+                  is to increase the value of your company.
+                </p>
               </div>
             </div>
           </div>
@@ -530,31 +548,35 @@ company.</p>
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
               <MdImportantDevices className="text-[60px] text-[#2334de]" />
               <div>
-              <h3 className="text-sm font-[500] text-black">Client-Focused Approach:</h3>
-              <p className="text-[10px]">We focus on your success. We
-work closely with you to
-understand your goals and modify
-our services to meet your
-particular needs.</p>
+                <h3 className="text-sm font-[500] text-black">
+                  Client-Focused Approach:
+                </h3>
+                <p className="text-[10px]">
+                  We focus on your success. We work closely with you to
+                  understand your goals and modify our services to meet your
+                  particular needs.
+                </p>
               </div>
             </div>
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
               <MdImportantDevices className="text-[60px] text-[#2334de]" />
               <div>
-              <h3 className="text-sm font-[500] text-black">Proven Success:</h3>
-              <p className="text-[10px]">We take interest in our track record of
-offering high-quality solutions resulting
-in measurable outcomes. Our primary
-goal is to increase the value of your
-company.</p>
+                <h3 className="text-sm font-[500] text-black">
+                  Proven Success:
+                </h3>
+                <p className="text-[10px]">
+                  We take interest in our track record of offering high-quality
+                  solutions resulting in measurable outcomes. Our primary goal
+                  is to increase the value of your company.
+                </p>
               </div>
             </div>
           </div>
           <div className="flex mt-8">
-              <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
-                Explore now
-              </button>
-            </div>
+            <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
+              Explore now
+            </button>
+          </div>
         </div>
       </div>
     </div>
