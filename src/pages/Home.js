@@ -4,6 +4,8 @@ import img2 from "../Assets/3.webp";
 import img3 from "../Assets/2.webp";
 import img4 from "../Assets/4.webp";
 import img5 from "../Assets/5.webp";
+import img6 from "../Assets/6.webp";
+import img7 from "../Assets/7.webp";
 
 import { Link } from "react-router-dom";
 import { MdImportantDevices } from "react-icons/md";
@@ -19,7 +21,11 @@ import { TbSeo } from "react-icons/tb";
 import { MdContentPasteSearch } from "react-icons/md";
 import { IoMdPlay } from "react-icons/io";
 import { IoIosPlay } from "react-icons/io";
-import { FaHandHoldingMedical } from "react-icons/fa";
+import { FaHandHoldingMedical, FaStethoscope, FaHeartbeat } from 'react-icons/fa';
+import { LuFocus } from "react-icons/lu";
+import { BsGraphUpArrow } from "react-icons/bs";
+import { MdSupportAgent } from "react-icons/md";
+import { GoCodeReview } from "react-icons/go";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -178,9 +184,15 @@ const sections = {
 
 const sectionKeys = Object.keys(sections);
 
+const benifits = [
+  { text: 'Prominent Healthcare Services', icon: <FaHandHoldingMedical size={30} className="text-[#2334de]" /> },
+  { text: 'Advanced Medical Care', icon: <FaStethoscope size={30} className="text-[#2334de]" /> },
+  { text: 'Comprehensive Heart Care', icon: <FaHeartbeat size={30} className="text-[#2334de]" /> },
+];
 const Home = () => {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
 
+  const [index, setIndex] = useState(0);
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentSectionIndex(
@@ -193,18 +205,39 @@ const Home = () => {
 
   const { heading, points } = sections[sectionKeys[currentSectionIndex]];
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentSectionIndex(
+        (prevIndex) => (prevIndex + 1) % sectionKeys.length
+      );
+    }, 2000);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % benifits.length);
+    }, 2000); // Change every 2 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, []);
+
+  // Ensure the index is within bounds
+  const currentService = benifits[index];
+
+  if (!currentService) {
+    return null; // Return nothing if service is undefined
+  }
   return (
     <div>
-      <div className="flex flex-col lg:flex-row items-center justify-between p-2 bg-background">
+      <div className="flex flex-col-reverse lg:flex-row items-center justify-between p-2 bg-background">
         <div className="lg:w-1/2 p-4">
           <span className="bg-[#2334de] text-[10px] text-white px-3 py-1">
             IT SOLUTIONS ---
           </span>
-          <h2 className="text-6xl mt-9 font-semibold text-black">Welcome To</h2>
-          <h1 className="text-6xl mt-2  font-semibold text-[#2334de]">
+          <h2 className="text-6xl md:text-5xl sm:text-4xl mt-9 font-semibold text-black">Welcome To</h2>
+          <h1 className="text-6xl md:text-5xl sm:text-4xl mt-2  font-semibold text-[#2334de]">
             Maxify Solutions
           </h1>
-          <p className="text-3xl mt-4 font-semibold text-black">
+          <p className="md:text-3xl sm:text-lg mt-4 font-semibold text-black">
             Your Partner For Digital Transformation
           </p>
           <Link className="mt-6 inline-block bg-[#2334de] text-white py-3 text-[14px] font-[300] px-5 rounded-[5px] hover:[#2334de]/80">
@@ -225,7 +258,7 @@ const Home = () => {
       </div>
 
       {/* second section */}
-      <div className="flex flex-col md:flex-row md:space-x-4 mt-8 w-[100%] mx-auto md:w-[80%]">
+      <div className="flex flex-col md:flex-row md:space-x-4 mt-8 w-[100%] mx-auto md:w-[90%]">
         {/* Left Side - Hidden in Mobile View */}
         <div className="flex w-full md:w-1/2 justify-end relative">
           <div className="flex justify-center items-center gap-3 p-6 bg-[#2334de] absolute rounded-md top-20 left-0 text-white">
@@ -241,7 +274,7 @@ const Home = () => {
             alt="Left Side"
             className="h-auto right-0 bottom-0 w-[40%] absolute"
           />
-          <img src={img2} alt="Left Side" className="w-[80%] h-auto" />
+          <img src={img2} alt="Left Side" className="w-[80%] object-cover h-auto" />
         </div>
 
         {/* Right Side - Visible in Mobile View */}
@@ -265,12 +298,16 @@ const Home = () => {
 
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 mb-6">
             <div className="flex-1 flex gap-3 items-center text-left p-4 rounded-md">
-              <MdImportantDevices className="text-[50px] text-[#2334de]" />
-              <p className="font-semibold">Custom software development.</p>
+            <div>
+              <MdImportantDevices className="text-[30px] text-[#2334de]" />
+              </div>
+              <p className="font-semibold lg:text-[12px] md:text-[12px]">Custom software development.</p>
             </div>
             <div className="flex-1 flex gap-3 items-center text-left p-4 rounded-md">
-              <AiOutlineSolution className="text-[50px] text-[#2334de]" />
-              <p className="font-semibold">Marketing Solution</p>
+            <div>
+              <AiOutlineSolution className="text-[30px] text-[#2334de]" />
+              </div>
+              <p className="font-semibold lg:text-[12px] md:text-[12px]">Marketing Solution</p>
             </div>
           </div>
           <p className="text-justify font-semibold text-sm">
@@ -287,7 +324,7 @@ const Home = () => {
                 <p className=" text-[12px] text-gray-400 font-semibold">
                   Call us anytime
                 </p>
-                <p className="text-md font-bold">+9999 5555 333</p>
+                <p className="text-[14px] font-bold">+9999 5555 333</p>
               </div>
             </div>
             <div className="w-1/2 flex justify-center">
@@ -391,7 +428,7 @@ const Home = () => {
 
       {/*  */}
       <div>
-        <div className="sm:none md:w-[45%] md:flex justify-end">
+        <div className="sm:hidden md:w-[45%] md:flex justify-end">
           {/* <IoMdPlay size={14} className="bg-[red] text-white h-[80px] w-[80px]"/> */}
           <IoIosPlay
             size={20}
@@ -399,27 +436,29 @@ const Home = () => {
           />
         </div>
         <div className="flex flex-col md:flex-row items-center bg-black text-white py-12 sm:px-3 md:px-0 relative">
-          <div className="md:w-1/2  md:px-20">
+          <div className="md:w-1/2  min-h-[400px] md:px-5">
             <h3 className="text-blue-500">
               // <span className="text-white"> What We Offer!</span>
             </h3>
-            <h1 className="text-4xl md:text-5xl font-bold mt-4">{heading}</h1>
+            <h1 className="text-4xl md:text-3xl font-bold mt-4">{heading}</h1>
             <div className="mt-8 space-y-8">
               {points.map((point, index) => (
                 <div key={index} className="flex items-start gap-3">
+                <div>
                   <div className="bg-blue-600 text-white h-10 w-10 flex items-center justify-center rounded-full">
                     {point.number}
                   </div>
+                  </div>
                   <div>
-                    <h4 className="text-xl font-semibold">{point.title}</h4>
-                    <p className="text-gray-400">{point.description}</p>
+                    <h4 className="text-lg font-semibold">{point.title}</h4>
+                    <p className="text-gray-400 text-sm">{point.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="w-full md:h-[600px] flex justify-center mt-8 md:mt-0 lg:absolute">
-            <div className=" lg:absolute right-[100px] top-[-30px]">
+          <div className="w-full lg:h-[600px] flex justify-center mt-8 md:mt-0 lg:absolute">
+            <div className=" lg:absolute right-[00px] top-[-30px]">
               <img
                 src={img1}
                 alt={`${heading} Illustration`}
@@ -436,21 +475,21 @@ const Home = () => {
         <div className="flex w-full md:w-1/2 justify-center items-center relative gap-3">
           <div className="flex flex-col gap-3">
             <img
-              src={img2}
+              src={img4}
               alt={`${heading} Illustration`}
-              className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
+              className="sm:h-[200px] md:h-[250px] sm:w-[150px] rounded-lg object-cover md:w-[200px]"
             />
             <img
-              src={img2}
+              src={img6}
               alt={`${heading} Illustration`}
-              className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
+              className="sm:h-[200px] md:h-[250px] sm:w-[150px] md:w-[200px]"
             />
           </div>
           <div>
             <img
-              src={img2}
+              src={img7}
               alt={`${heading} Illustration`}
-              className="sm:h-[200px] md:h-[300px] sm:w-[150px] md:w-[200px]"
+              className="sm:h-[200px] md:h-[300px] sm:w-[150px] rounded-lg object-cover md:w-[200px]"
             />
           </div>
         </div>
@@ -470,9 +509,9 @@ const Home = () => {
           </p>
 
           <div className="flex justify-between shadow-md p-4 mb-6 border-t-[1px] border-r-[1px] border-l-[3px] border-l-[#2334de]">
-            <p className="font-semibold">Prominent Healthcare Services</p>
-            <FaHandHoldingMedical size={30} className="text-[#2334de]" />
-          </div>
+      <p className="font-semibold">{benifits[index].text}</p>
+      {benifits[index].icon}
+    </div>
 
           <div className="mt-8">
             <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
@@ -485,25 +524,12 @@ const Home = () => {
       {/* last section */}
       <div className="flex flex-col md:flex-row md:space-x-4 mt-8 w-[100%] mx-auto md:w-[80%]">
         {/* Left Side - Hidden in Mobile View */}
-        <div className="flex w-full md:w-1/2 justify-end relative">
-          <div className="flex justify-center items-center gap-3 p-6 bg-[#2334de] absolute rounded-md top-20 left-0 text-white">
-            <FaPeopleGroup size={30} />
-            <p className="text-center text-sm">
-              Years of
-              <br />
-              experience
-            </p>
-          </div>
-          <img
-            src={img5}
-            alt="Left Side"
-            className="h-auto right-0 bottom-0 w-[40%] absolute"
-          />
-          <img src={img2} alt="Left Side" className="w-[80%] h-auto" />
+        <div className="w-full md:w-1/2 justify-center relative sm:hidden lg:flex">
+          <img src={img3} alt="Left Side" className="w-[100%] object-cover h-auto" />
         </div>
 
         {/* Right Side - Visible in Mobile View */}
-        <div className="w-full md:w-1/2 p-4 md:p-8 sm:px-3 md:px-[30px]">
+        <div className="w-full md:w-full lg:w-1/2 p-4 md:p-8 sm:px-3 md:px-[30px]">
           <span className="text-[12px] font-[500] px-4 py-0 bg-[#2334de] text-white">
             Why ------
           </span>
@@ -518,12 +544,14 @@ const Home = () => {
 
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 mb-6">
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
-              <MdImportantDevices className="text-[60px] text-[#2334de]" />
+            <div>
+              <LuFocus className="text-[30px] text-[#2334de]" />
+              </div>
               <div>
                 <h3 className="text-sm font-[500] text-black">
                   Client-Focused Approach:
                 </h3>
-                <p className="text-[10px]">
+                <p className="text-[10px] text-justify">
                   We focus on your success. We work closely with you to
                   understand your goals and modify our services to meet your
                   particular needs.
@@ -531,12 +559,14 @@ const Home = () => {
               </div>
             </div>
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
-              <MdImportantDevices className="text-[60px] text-[#2334de]" />
+            <div>
+              <BsGraphUpArrow className="text-[30px] text-[#2334de]" />
+              </div>
               <div>
                 <h3 className="text-sm font-[500] text-black">
                   Proven Success:
                 </h3>
-                <p className="text-[10px]">
+                <p className="text-[10px] text-justify">
                   We take interest in our track record of offering high-quality
                   solutions resulting in measurable outcomes. Our primary goal
                   is to increase the value of your company.
@@ -546,28 +576,34 @@ const Home = () => {
           </div>
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 mb-6">
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
-              <MdImportantDevices className="text-[60px] text-[#2334de]" />
+            <div>
+              <MdSupportAgent className="text-[30px] text-[#2334de]" />
+              </div>
               <div>
                 <h3 className="text-sm font-[500] text-black">
-                  Client-Focused Approach:
+                Ongoing Support:
                 </h3>
-                <p className="text-[10px]">
-                  We focus on your success. We work closely with you to
-                  understand your goals and modify our services to meet your
-                  particular needs.
+                <p className="text-[10px]  text-justify">
+                Our dedication to your success does
+not end when we offer our services. We
+provide ongoing support and
+maintenance to ensure that your
+solutions operate at their best.
                 </p>
               </div>
             </div>
             <div className="flex-1 flex gap-3 items-start text-left p-4 rounded-md">
-              <MdImportantDevices className="text-[60px] text-[#2334de]" />
+            <div>
+              <GoCodeReview className="text-[30px] text-[#2334de]" />
+              </div>
               <div>
                 <h3 className="text-sm font-[500] text-black">
-                  Proven Success:
+                Innovative Solutions:
                 </h3>
-                <p className="text-[10px]">
-                  We take interest in our track record of offering high-quality
-                  solutions resulting in measurable outcomes. Our primary goal
-                  is to increase the value of your company.
+                <p className="text-[10px] text-justify">
+                We stay on top of trends by providing
+modern technology that keeps you
+successful in your business.
                 </p>
               </div>
             </div>
