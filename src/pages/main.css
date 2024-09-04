@@ -1,4 +1,4 @@
-.group:hover .main-content, 
+.group:hover .main-content,
 .group:hover .button-container {
   display: none;
 }
@@ -6,4 +6,8 @@
 .group:hover .show-content {
   display: flex;
   transition: 1s;
+}
+
+.show-on-hover {
+  display: none;
 }
