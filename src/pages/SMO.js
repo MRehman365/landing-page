@@ -281,6 +281,45 @@ const SMO = () => {
         />
       </div>
     </div>
+
+    {/* Section * */}
+    <div className="pt-10">
+      {/* Top Section */}
+      <div className="bg-white text-center">
+        <span className="inline-block px-4 py-1 text-sm font-medium text-blue-500 bg-blue-100 rounded-full mb-4">
+          In The Digital Age
+        </span>
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight text-gray-900">
+          Having a strong social media <br className="hidden md:block" />
+          presence is <span className="text-blue-600">no longer optional</span>
+        </h1>
+      </div>
+
+      {/* Middle Section with Linear Gradient Background */}
+      <div className=" mt-8 py-10" style={{ background: 'linear-gradient(to bottom, white 50%, blue 50%)'}}>
+      <div className="md:w-[90%] lg:w-[80%] mx-auto  flex flex-col md:flex-row items-center justify-center">
+        <div className="md:w-1/2 flex justify-end">
+          <img
+            src={img4} // Replace with actual image source
+            alt="Team Working"
+            className="rounded-lg shadow-lg"
+          />
+        </div>
+        <div className="md:w-1/2 mt-6 md:mt-0 p-5 rounded-lg text-gray-600 bg-white">
+          <p className="text-lg">
+            It’s essential. As the leading SMO services company in India, Maxify web solution is committed to helping you build and maintain a powerful online presence that drives growth and success. Whether you’re looking to enhance your brand awareness, engage with your audience, or increase website traffic, our expert team is here to help.
+          </p>
+        </div>
+      </div>
+      </div>
+
+      {/* Bottom Section with Solid Blue Background */}
+      <div className="bg-[blue] text-white text-center py-6">
+        <p className="text-lg font-semibold">
+          Contact us today to learn more about our SMO services and how we can help your business thrive in the competitive digital landscape.
+        </p>
+      </div>
+    </div>
     </div>
   );
 };
