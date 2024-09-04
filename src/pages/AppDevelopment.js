@@ -15,6 +15,7 @@ import img11 from "../Assets/app development/10.webp";
 import img12 from "../Assets/app development/11.webp";
 import { HiUserGroup } from "react-icons/hi2";
 import { FaHandHoldingHeart } from "react-icons/fa";
+import { GoArrowRight } from "react-icons/go";
 import { FaCheckCircle } from 'react-icons/fa';
 const AppDevelopment = () => {
     const [activeService, setActiveService] = useState('Android App Development');
@@ -265,7 +266,8 @@ const AppDevelopment = () => {
           </div>
           
           <div className="text-center mt-4">
-            <button className="bg-[blue] text-white text-sm px-4 py-3 rounded-full hover:bg-[blue]/80">
+            <button className="ml-2 text-base rounded-full relative px-8 py-2 text-[blue] bg-none isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[blue] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-white">
               MORE ABOUT US
             </button>
           </div>
@@ -286,7 +288,10 @@ const AppDevelopment = () => {
         <p className=" text-[#e2e2e2] text-sm">Save Time and Money with our Powerful Method</p>
         </div>
         <div>
-        <Link className="text-base bg-[blue] text-white px-5 py-3 rounded-full">Learn More</Link>
+        <button className="mt-8 rounded-full relative px-8 py-2 text-[blue] bg-none isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[blue] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-white">
+            Learn More
+          </button>
         </div>
         </div>
         <div className="flex lg:justify-end w-full">
@@ -388,8 +393,9 @@ const AppDevelopment = () => {
               </li>
             ))}
           </ul>
-          <button className="mt-8 px-6 py-3 bg-[blue] text-white rounded-full flex items-center">
-            Learn More <span className="ml-2">↗</span>
+          <button className="mt-8 rounded-full flex items-center relative px-8 py-2 text-[blue] bg-white isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[blue] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-white">
+            Learn More <span className="ml-2"><GoArrowRight /></span>
           </button>
         </div>
 
@@ -440,8 +446,9 @@ const AppDevelopment = () => {
               </li>
             ))}
           </ul>
-          <button className="mt-8 px-6 py-3 bg-[blue] text-white rounded-full flex items-center">
-            Learn More <span className="ml-2">↗</span>
+          <button className="mt-8 flex items-center relative px-8 py-2 text-[blue] rounded-md bg-white isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[blue] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-white">
+            Learn More <span className="ml-2"><GoArrowRight /></span>
           </button>
         </div>
       <div className="lg:w-1/2 mt-6">

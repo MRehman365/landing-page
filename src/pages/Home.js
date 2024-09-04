@@ -255,8 +255,11 @@ const Home = () => {
           <p className="md:text-3xl sm:text-lg mt-4 font-semibold text-black">
             Your Partner For Digital Transformation
           </p>
-          <Link to="/app" className="mt-6 inline-block bg-[#2334de] text-white py-3 text-[14px] font-[300] px-5 rounded-[5px] hover:[#2334de]/80">
+          <Link to="/app">
+          <button  className="mt-8 py-3 text-[14px] font-[300] px-5 rounded-sm relative text-[white] bg-[blue] isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[white] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-[blue]">
             Get Started Now
+          </button>
           </Link>
         </div>
         <div className="lg:w-1/2 mt-8 lg:mt-0 flex items-center justify-center relative sm:h-[400px] md:h-[600px]">
@@ -351,9 +354,12 @@ const Home = () => {
               </div>
             </div>
             <div className="w-1/2 flex justify-center">
-              <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
+            <Link to="/smo">
+              <button className=" px-6 py-2 rounded-[5px] relative text-[white] bg-[blue] isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[white] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-[blue]">
                 Explore now
               </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -443,7 +449,8 @@ const Home = () => {
             <span className="font-semibold">Web Development & Design</span>{" "}
             needs.
           </p>
-          <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
+          <button className=" px-6 py-2 rounded-sm relative text-[white] bg-[blue] isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[white] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-[blue]">
             Explore now
           </button>
         </div>
@@ -537,7 +544,8 @@ const Home = () => {
           </div>
 
           <div className="mt-8">
-            <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
+            <button className=" px-6 py-2  relative text-[white] bg-[blue] isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[white] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-[blue]">
               Explore now
             </button>
           </div>
@@ -633,7 +641,8 @@ const Home = () => {
             </div>
           </div>
           <div className="flex mt-8">
-            <button className="bg-[#2334de] text-white px-6 py-2 rounded-sm">
+            <button className=" px-6 py-2 rounded-sm relative text-[white] bg-[blue] isolation-auto z-10 border-2 border-[blue]
+        before:absolute before:w-full before:transition-all before:duration-700 before:hover:w-full before:-right-full before:hover:right-0 before:rounded-full  before:bg-[white] before:-z-10  before:aspect-square before:hover:scale-150 overflow-hidden before:hover:duration-700  hover:text-[blue]">
               Explore now
             </button>
           </div>
