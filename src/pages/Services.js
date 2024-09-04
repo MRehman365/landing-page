@@ -12,6 +12,8 @@ import img7 from "../Assets/services/7.webp";
 import img8 from "../Assets/services/8.webp";
 import img9 from "../Assets/services/9.webp";
 import img10 from "../Assets/services/10.webp";
+import img12 from "../Assets/services/12.webp";
+import img13 from "../Assets/services/13.webp";
 import icon from "../Assets/services/icon.svg";
 import icon1 from "../Assets/services/1.svg";
 import icon2 from "../Assets/services/2.svg";
@@ -91,14 +93,28 @@ const Services = () => {
     },
   ];
 
-  const [shoCcontent, setshoCcontent] = useState(false);
+  const [showMore, setShowMore] = useState(null);
+  // const featuresRef = useRef(null); // Ref for smooth scroll
+  console.log("first", showMore);
+
+  const handleClick = (i) => {
+    if (showMore === i) {
+      setShowMore(null);
+    } else {
+      setShowMore(i);
+      // setTimeout(() => {
+      //   // Smooth scroll to the features section
+      //   featuresRef.current?.scrollIntoView({ behavior: "smooth" });
+      // }, 100);
+    }
+  };
 
   return (
     <div>
       {/* hero section */}
-      <div className="flex flex-col md:flex-row items-center bg-gray-50 min-h-screen">
+      <div className="flex flex-col md:flex-row items-center bg-gray-50 min-h-screen sm:flex-col-reverse">
         {/* Left Section */}
-        <div className="md:w-1/2 mb-8 md:mb-0 px-10">
+        <div className="md:w-1/2 mb-8 md:mb-0 lg:px-10 sm:px-5 sm:mt-5 lg:mt-0">
           <div className="bg-blue-700 uppercase text-white tracking-wider mb-4 text-[10px] flex text-center w-32 px-2 py-[2px] justify-between">
             <span>Why Your </span>
             <span className="w-10 mt-2">
@@ -112,7 +128,7 @@ const Services = () => {
           <h2 className="text-lg md:text-xl text-gray-700 mb-6 font-bold">
             Company In Noida
           </h2>
-          <p className="text-gray-600 mb-8 leading-relaxed text-sm">
+          <p className="text-gray-600 mb-8 leading-relaxed lg:text-sm sm:text-[12px]">
             In today’s digital era, your website is more than just an online
             brochure—it’s the face of your business, a powerful tool that can
             attract customers, build credibility, and drive growth. Whether
@@ -123,7 +139,7 @@ const Services = () => {
             here to help you create a website that not only looks great but also
             delivers outstanding performance.
           </p>
-          <button className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">
+          <button className="bg-blue-600 text-white font-semibold lg:px-6 lg:py-3 sm:px-4 sm:py-2 rounded-lg hover:bg-blue-700 transition duration-300">
             Get Started Now
           </button>
         </div>
@@ -140,9 +156,9 @@ const Services = () => {
       {/* second section */}
 
       <div className="bg-white min-h-screen">
-        <div className="flex flex-col md:flex-row items-center  p-8 md:p-16 w-[80%] mx-auto">
+        <div className="flex flex-col md:flex-row items-center  lg:p-8 md:p-16 sm:p-2 lg:w-[80%] sm:w-[90%] mx-auto">
           {/* Left Section */}
-          <div className="md:w-[50%] relative flex ml-10 md:mb-0">
+          <div className="md:w-[50%] relative flex md:ml-10 sm:ml-0 md:mb-0">
             <div className="absolute left-0 top-0 bg-blue-600 w-2 h-[90%]"></div>
             <div className="relative">
               <img
@@ -159,7 +175,7 @@ const Services = () => {
           </div>
 
           {/* Right Section */}
-          <div className="md:w-[50%] pl-0">
+          <div className="md:w-[50%] sm:w-full pl-0 sm:mt-12 md:mt-0">
             <div className="text-sm text-gray-500 uppercase tracking-wide mb-2 flex h-full">
               <span> Why Choose Us?</span>{" "}
               <span className="w-[20px] mt-2 ml-2">
@@ -167,7 +183,7 @@ const Services = () => {
               </span>
               <span className="inline-block w-2 h-2 bg-blue-600 rounded-full mr-2 mt-[4px]"></span>
             </div>
-            <h2 className="text-3xl md:text-2xl font-bold text-gray-900 mb-6 kanit-regular">
+            <h2 className="text-3xl md:text-2xl sm:text-xl font-bold text-gray-900 mb-6 sm:mb-2 kanit-regular">
               The Best Website Development <br />
               Company in Noida
             </h2>
@@ -198,12 +214,12 @@ const Services = () => {
                 the expertise to deliver high-quality solutions.
               </p>
             </div>
-            <div className="mt-8 flex items-center space-x-4">
-              <button className="bg-blue-700 text-white font-semibold px-6 py-3 hover:bg-blue-700 transition duration-300">
+            <div className="mt-8 flex md:flex-row sm:flex-col gap-3 items-center space-x-4">
+              <button className="bg-blue-700 text-white font-normal text-sm px-6 py-3 w-full hover:bg-blue-700 transition duration-300">
                 Discover More
               </button>
               <div className="flex items-center text-blue-600 font-semibold space-x-2">
-                <span className="text-2xl bg-blue-700 text-white p-3">
+                <span className="md:text-2xl sm:text-xl bg-blue-700 text-white p-3">
                   <BiPhoneCall />
                 </span>
                 <div>
@@ -217,12 +233,12 @@ const Services = () => {
       </div>
 
       {/* our servioces section */}
-
-      <div>
-        <div className="bg-blue-900 pt-12 pb-1 px-8 md:px-16">
+      {/* for laptop view */}
+      <div className="sm:hidden md:block">
+        <div className="bg-blue-900 pt-12 pb-1 sm:px-4 md:px-16">
           <h3 className="text-white text-center text-sm">// Our Services:</h3>
-          <div className="w-[60%] mx-auto">
-            <h2 className="text-3xl md:text-3xl font-semibold text-white text-center mb-12 ">
+          <div className="md:w-[60%] sm:w-[95%] mx-auto">
+            <h2 className="md:text-3xl sm:text-xl font-semibold text-white text-center mb-12 ">
               What Makes Us the Best Web Development Company in Noida
             </h2>
           </div>
@@ -242,8 +258,17 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {serviceData.map((service, index) => (
               <div className="">
-                <div className="p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between ">
-                  <div className="group-hover-hidden transition duration-300">
+                <div
+                  className={`p-6 w-[90%] shadow-2xl h-auto ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between`}
+                  onMouseLeave={() => handleClick(null)}
+                >
+                  <div
+                    className={
+                      showMore == index
+                        ? `hidden`
+                        : `group-hover-hidden transition duration-300`
+                    }
+                  >
                     <div className="flex justify-between">
                       <h3 className="text-[10px] bg-blue-600 text-center text-white rounded-lg px-3 py-1 mb-4 w-[70%]">
                         {service.title}
@@ -256,10 +281,11 @@ const Services = () => {
                       {service.description}
                     </p>
                   </div>
-                  <div className="groupclass">
+                  <div className={showMore == index ? "hidden" : "block"}>
                     <div
                       className=" flex flex-col justify-end group-hover-hidden transition duration-300"
-                      // onMouseEnter={() => setshoCcontent(true)}
+                      onMouseEnter={() => handleClick(index)}
+                      onmouseleave={() => handleClick(null)}
                     >
                       <div className="flex items-center ">
                         <span className="text-sm font-medium text-gray-900 mr-2">
@@ -272,12 +298,103 @@ const Services = () => {
                     </div>
                   </div>
                 </div>
-                <div className="show-on-hover p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex flex-col justify-between">
-                  <ul className="text-gray-700 text-[12px] flex flex-col gap-3 list-disc">
+                <div
+                  className={
+                    showMore == index
+                      ? "flex p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex-col justify-between"
+                      : "hidden "
+                  }
+                  // onMouseLeave={() => handleClick(null)}
+                >
+                  <ul
+                    className="text-gray-700 text-[12px] flex flex-col gap-3 list-disc"
+                    onMouseLeave={() => handleClick(null)}
+                  >
                     <li>{service.key1}</li>
                     <li>{service.key2}</li>
                     <li>{service.key3}</li>
                   </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* for phone view */}
+      <div className="sm:block md:hidden">
+        <div className="bg-blue-900 pt-12 pb-1 sm:px-4 md:px-16">
+          <h3 className="text-white text-center text-sm">// Our Services:</h3>
+          <div className="md:w-[60%] sm:w-[95%] mx-auto">
+            <h2 className="md:text-3xl sm:text-xl font-semibold text-white text-center mb-12 ">
+              What Makes Us the Best Web Development Company in Noida
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {serviceData.map((service, index) => (
+              <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img
+                  src={service.imageSrc}
+                  alt=""
+                  className="w-full h-48 object-cover"
+                />
+                <div className="z-40 bg-white ">
+                  <div
+                    className="p-6 w-[90%] shadow-2xl h-auto ml-6 rounded-lg mt-[-50px] z-40 bg-white flex flex-col justify-between inline-table"
+                    onMouseLeave={() => handleClick(null)}
+                  >
+                    <div
+                      className={
+                        showMore == index
+                          ? `hidden`
+                          : `group-hover-hidden transition duration-300`
+                      }
+                    >
+                      <div className="flex justify-between">
+                        <h3 className="text-[10px] bg-blue-600 text-center text-white rounded-lg px-3 py-1 mb-4 w-[70%]">
+                          {service.title}
+                        </h3>
+                        <div className="mt-[-10px]">
+                          <img src={icon} alt="" />
+                        </div>
+                      </div>
+                      <p className="text-gray-700 text-[12px] text-justify mb-6">
+                        {service.description}
+                      </p>
+                    </div>
+                    <div className={showMore == index ? "hidden" : "block"}>
+                      <div
+                        className=" flex flex-col justify-end group-hover-hidden transition duration-300"
+                        onMouseEnter={() => handleClick(index)}
+                        onmouseleave={() => handleClick(null)}
+                      >
+                        <div className="flex items-center ">
+                          <span className="text-sm font-medium text-gray-900 mr-2">
+                            Key Features:
+                          </span>
+                          <button className="text-white p-1 rounded-full bg-blue-800 transition duration-300">
+                            <FaArrowRight />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={
+                      showMore == index
+                        ? "flex p-6 w-[90%] shadow-2xl h-[21rem] ml-6 rounded-lg mt-[-50px] z-10 bg-white flex-col justify-between"
+                        : "hidden "
+                    }
+                    // onMouseLeave={() => handleClick(null)}
+                  >
+                    <ul
+                      className="text-gray-700 text-[12px] flex flex-col gap-3 list-disc"
+                      onMouseLeave={() => handleClick(null)}
+                    >
+                      <li>{service.key1}</li>
+                      <li>{service.key2}</li>
+                      <li>{service.key3}</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}
@@ -290,15 +407,15 @@ const Services = () => {
       <div>
         <div className="bg-white py-12">
           {/* Section Title */}
-          <div className="text-center mb-12 w-[50%] mx-auto">
+          <div className="text-center md:mb-12 sm:md-5 md:w-[50%] sm:w-[95%] mx-auto">
             <p className="text-gray-500 text-sm">What Sets Us Apart:</p>
-            <h2 className="text-3xl kanit-medium">
+            <h2 className="md:text-3xl sm:text-lg kanit-medium">
               Why We Are the Best Website Development Company in Noida
             </h2>
           </div>
 
           {/* Service Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:px-0 md:px-8">
             {services1.map((service) => (
               <div
                 key={service.id}
@@ -339,380 +456,47 @@ const Services = () => {
       {/* learn more section */}
 
       <div className="bg-white">
-        <div className="w-[60%] mx-auto">
+        <div className="md:w-[60%] sm:w-[95%] mx-auto">
           <div className="border-[1px] border-blue-600 p-2 flex justify-between">
-            <div>
-              <span className="text-gray-700">
+            <div className="sm:text-[12px] md:text-sm">
+              <span className="text-gray-700 sm:text-[12px] md:text-sm">
                 Need digital marketing solutions & services?{" "}
               </span>
-              <span className="text-blue-600"> Send a request now</span>
+              <span className="text-blue-600 sm:text-[12px] md:text-sm">
+                {" "}
+                Send a request now
+              </span>
             </div>
-            <div>
+            <div className="sm:hidden md:block">
               <button className="bg-blue-700 px-2 py-2 text-white text-sm">
                 Learn More
               </button>
             </div>
+          </div>
+          <div className="sm:flex md:hidden mt-5 justify-center">
+            <button className="bg-blue-700 px-4 py-2 text-white text-sm">
+              Learn More
+            </button>
           </div>
         </div>
       </div>
 
       {/* price section  */}
       <div>
-        {/* <section className="bg-white dark:bg-gray-900">
-          <div className="py-8 px-20 mx-auto max-w-screen-xl lg:py-16 lg:px-20">
-            <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                Website Packages
-              </h2>
-              {/* <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-                Here at Flowbite we focus on markets where technology,
-                innovation, and capital can unlock long-term value and drive
-                economic growth.
-              </p> 
-            </div>
-            <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-              {/* Pricing Card - Starter 
-              <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                <h3 className="mb-4 text-2xl font-semibold">
-                  STARTUP BUSINESS{" "}
-                </h3>
-                <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                  Best option for personal use & for your next project.
-                </p>
-                <div className="flex justify-center items-baseline my-8">
-                  <span className="mr-2 text-2xl font-extrabold">
-                    RS14999/$199
-                  </span>
-                  <span className="text-gray-500 dark:text-gray-400">
-                    /month
-                  </span>
-                </div>
-                <ul role="list" className="mb-8 space-y-4 text-left">
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>Individual configuration</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>No setup, or hidden fees</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Team size:{" "}
-                      <span className="font-semibold">1 developer</span>
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Premium support:{" "}
-                      <span className="font-semibold">6 months</span>
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Free updates:{" "}
-                      <span className="font-semibold">6 months</span>
-                    </span>
-                  </li>
-                </ul>
-                <a
-                  href="#"
-                  className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
-                >
-                  Get started
-                </a>
-              </div>
-              {/* Pricing Card - Company 
-              <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                <h3 className="mb-4 text-2xl font-semibold">Company</h3>
-                <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                  Relevant for multiple users, extended & premium support.
-                </p>
-                <div className="flex justify-center items-baseline my-8">
-                  <span className="mr-2 text-5xl font-extrabold">$99</span>
-                  <span className="text-gray-500 dark:text-gray-400">
-                    /month
-                  </span>
-                </div>
-                <ul role="list" className="mb-8 space-y-4 text-left">
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>Individual configuration</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>No setup, or hidden fees</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Team size:{" "}
-                      <span className="font-semibold">10 developers</span>
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Premium support:{" "}
-                      <span className="font-semibold">24 months</span>
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Free updates:{" "}
-                      <span className="font-semibold">24 months</span>
-                    </span>
-                  </li>
-                </ul>
-                <a
-                  href="#"
-                  className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
-                >
-                  Get started
-                </a>
-              </div>
-              {/* Pricing Card - Enterprise 
-              <div className="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-                <h3 className="mb-4 text-2xl font-semibold">Enterprise</h3>
-                <p className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                  Best for large scale uses and extended redistribution rights.
-                </p>
-                <div className="flex justify-center items-baseline my-8">
-                  <span className="mr-2 text-5xl font-extrabold">$499</span>
-                  <span className="text-gray-500 dark:text-gray-400">
-                    /month
-                  </span>
-                </div>
-                <ul role="list" className="mb-8 space-y-4 text-left">
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>Individual configuration</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>No setup, or hidden fees</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Team size:{" "}
-                      <span className="font-semibold">100+ developers</span>
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Premium support:{" "}
-                      <span className="font-semibold">36 months</span>
-                    </span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <svg
-                      className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
-                    <span>
-                      Free updates:{" "}
-                      <span className="font-semibold">36 months</span>
-                    </span>
-                  </li>
-                </ul>
-                <a
-                  href="#"
-                  className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
-                >
-                  Get started
-                </a>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         <section className="bg-white dark:bg-gray-900">
-          <div className="py-8 px-20 mx-auto lg:py-16 lg:px-20">
+          <div className="py-8 px-20 mx-auto lg:py-16 md:px-20 sm:px-2">
             <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
               <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 Website Packages
               </h2>
-              {/* <p className="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">
-                Here at Flowbite we focus on markets where technology,
-                innovation, and capital can unlock long-term value and drive
-                economic growth.
-              </p> */}
             </div>
             <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
               {/* Starter Plan */}
               <PricingCard
                 title="STARTUP BUSINESS"
                 price="RS14999 / $199"
-                // color="bg-red-500"
-                // description="Best option for personal use & for your next project."
+                index={1}
+                color="bg-blue-600"
                 features={[
                   "Up-to 5 Pages",
                   "Logo",
@@ -721,28 +505,29 @@ const Services = () => {
                   "Domain-1st Year Free (.com or .in )",
                 ]}
                 features2={[
-                  " Hosting Free For 1st Year",
+                  "Hosting Free For 1st Year",
                   "1 Email – 500 MB Quota",
                   "1 Contact Form",
-                  " Free SSL",
+                  "Free SSL",
                   "Testimonials",
-                  " Gallery Section",
+                  "Gallery Section",
                   "Chat Feature",
                   "Content - 2$ per word",
                   "Social Profile Link",
                   "Click to Call/Email",
-                  " Mobile Responsive",
-                  " Login Details Will Be Given",
-                  " Delivery in 3 Days",
-                  " Renewal – 25$ + Domain Price Plus GST",
-                  " Support – 10$/Hr",
+                  "Mobile Responsive",
+                  "Login Details Will Be Given",
+                  "Delivery in 3 Days",
+                  "Renewal – 25$ + Domain Price Plus GST",
+                  "Support – 10$/Hr",
                 ]}
               />
               {/* Company Plan */}
               <PricingCard
                 title="SMALL BUSINESS"
                 price="RS24999  / $319"
-                // description="Relevant for multiple users, extended & premium support."
+                index={2}
+                color="bg-black"
                 features={[
                   "10 Pages",
                   "Logo",
@@ -751,47 +536,122 @@ const Services = () => {
                   "Domain-1st Year Free (.com or .in )",
                 ]}
                 features2={[
-                  " Hosting Free For 1st Year",
+                  "Hosting Free For 1st Year",
                   "2 Emails – 500 MB Quota Each",
                   "1 Contact Form",
-                  " Free SSL",
+                  "Free SSL",
                   "Testimonials",
-                  " Gallery Section",
+                  "Gallery Section",
                   "Chat Feature",
                   "15$/Extra Page",
                   "Social Profile Link",
                   "Click to Call/Email",
-                  " Mobile Responsive",
-                  " Login Details Will Be Given",
-                  " Delivery in 7 Days",
+                  "Mobile Responsive",
+                  "Login Details Will Be Given",
+                  "Delivery in 7 Days",
                   "Renewal – 40$ + Domain Price Plus GST",
                   "Free 4 Hours Support",
-                  " Support – 15$/Hr",
+                  "Support – 15$/Hr",
                 ]}
               />
               {/* Enterprise Plan */}
               <PricingCard
                 title="E-COMMERCE"
                 price="RS34999 / $449"
-                // description="Best for large scale uses and extended redistribution rights."
+                index={3}
+                color="bg-blue-600"
                 features={[
-                  " Up to 50 Products",
+                  "Up to 50 Products",
                   "Logo",
                   "Contact Form – 3",
                   "Content - 2$ per word",
                   "20$/Extra Page",
                 ]}
                 features2={[
-                  " WhatsApp Chat Integration",
-                  " Social Media Profiles Integration",
+                  "WhatsApp Chat Integration",
+                  "Social Media Profiles Integration",
                   "Social Profile Link",
-                  " WordPress Login Details Will be Given",
-                  " Payment Gateway",
+                  "WordPress Login Details Will be Given",
+                  "Payment Gateway",
                   "Extra Support –20$/Hour",
                   "Revisions – 2",
-                  " Call/Email/Chat Support",
+                  "Call/Email/Chat Support",
                 ]}
               />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* seo section */}
+
+      <div>
+        <section className="bg-gray-900 text-white py-8">
+          <div className="container mx-auto sm:px-0 md:px-[11rem]">
+            <div className="text-center md:mb-12 sm:mb-5">
+              <div className="text-white text-center mb-2">
+                <span className="text-white">
+                  <hr />
+                </span>
+                <span>UI/UX</span>
+                <span>
+                  <hr />
+                </span>
+              </div>
+              <h2 className="md:text-3xl sm:text-2xl font-semibold md:mb-4 sm:mb-1">
+                SEO and User Experience
+              </h2>
+              <h2 className="text-xl font-medium  md:mb-4 sm:mb-1">
+                Why They Matter
+              </h2>
+              <p className="max-w-2xl mx-auto text-sm">
+                A great website is not just about looks; it's also about
+                functionality and visibility. As the best website development
+                company in Noida, we ensure that your website is both
+                SEO-friendly and user-friendly. Here's how we do it:
+              </p>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Card 1 */}
+              <div className="bg-white text-gray-900 rounded-lg shadow-lg flex flex-col items-center">
+                <img src={img13} alt="SEO" className="rounded-t-lg mb-6" />
+                <div className="p-5">
+                  <h3 className="text-xl font-semibold mb-4">
+                    Search Engine Optimization
+                  </h3>
+                  <p className="text-center text-sm mb-6">
+                    We optimize your website for search engines right from the
+                    start. Our SEO strategies include keyword optimization, meta
+                    tags, and proper code standards to help search engines index
+                    your website.
+                  </p>
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+                    Know More
+                  </button>
+                </div>
+              </div>
+              {/* Card 2 */}
+              <div className="bg-white text-gray-900 rounded-lg shadow-lg flex flex-col items-center">
+                <img
+                  src={img12}
+                  alt="User Experience"
+                  className="rounded-t-lg mb-6"
+                />
+                <div className="p-5 items-center">
+                  <h3 className="text-xl font-semibold mb-4">
+                    User Experience (UX)
+                  </h3>
+                  <p className="text-center text-sm mb-6">
+                    We focus on creating an intuitive and enjoyable experience
+                    for your users. Our UX design principles ensure that
+                    visitors can easily find what they're looking for and are
+                    encouraged to take action.
+                  </p>
+                  <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 items-center text-center">
+                    Know More
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>

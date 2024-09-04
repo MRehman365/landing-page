@@ -1,24 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FaArrowDown } from "react-icons/fa";
+import { FaArrowRightLong } from "react-icons/fa6";
 
-const PricingCard = ({ title, price, features, color, features2 }) => {
-  const [showMore, setShowMore] = useState(false);
+const PricingCard = ({ title, price, features, index, features2, color }) => {
+  const [showMore, setShowMore] = useState(null);
+  const featuresRef = useRef(null); // Ref for smooth scroll
+
+  const handleClick = (i) => {
+    if (showMore === i) {
+      setShowMore(null);
+    } else {
+      setShowMore(i);
+      setTimeout(() => {
+        // Smooth scroll to the features section
+        featuresRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
+
   return (
     <div
-      className={`flex bg-blue-600 flex-col p-6 mx-auto max-w-lg text-center text-white rounded-2xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white`}
-      //   onClick={() => setShowMore(false)}
+      className={`${
+        showMore === index ? "h-auto" : "h-[28rem]"
+      }  flex flex-col p-6 mx-auto max-w-lg text-center text-white rounded-2xl border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:text-white ${color}`}
     >
-      <h3 className="mb-4 text-2xl font-semibold">{title}</h3>
+      <h3 className=" text-2xl font-semibold">{title}</h3>
 
       <div className="flex justify-center items-baseline my-4">
         <span className="mr-2 text-2xl font-extrabold">{price}</span>
         <span className="text-gray-300 dark:text-gray-400">/month</span>
       </div>
+      <div className="mb-2">
+        <hr />
+      </div>
+
       {/* Features List */}
       <ul role="list" className="mb-4 space-y-4 text-left">
         {features.map((feature, index) => (
           <li key={index} className="flex items-center space-x-3">
-            {/* Icon */}
             <svg
               className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
               fill="currentColor"
@@ -35,11 +54,14 @@ const PricingCard = ({ title, price, features, color, features2 }) => {
           </li>
         ))}
       </ul>
-      <div className={showMore ? "block" : "hidden"}>
+
+      <div
+        ref={featuresRef}
+        className={showMore === index ? "block" : "hidden"}
+      >
         <ul role="list" className="mb-8 space-y-4 text-left">
           {features2?.map((feature, index) => (
             <li key={index} className="flex items-center space-x-3">
-              {/* Icon */}
               <svg
                 className="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
                 fill="currentColor"
@@ -57,20 +79,25 @@ const PricingCard = ({ title, price, features, color, features2 }) => {
           ))}
         </ul>
       </div>
+
       <button
         className="flex justify-center gap-2"
-        onClick={() => setShowMore(!showMore)}
+        onClick={() => handleClick(index)}
       >
-        <span> View More</span>
+        <span>{showMore === index ? "view Less" : "View More"}</span>
         <span className="mt-1">
           <FaArrowDown />
         </span>
       </button>
+
       <a
         href="#"
-        className="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
+        className="text-blue-600 flex justify-center gap-2 bg-white mt-2 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-white dark:focus:ring-primary-900"
       >
-        Get started
+        <span>Choose This Plan</span>
+        <span className="mt-1">
+          <FaArrowRightLong />
+        </span>
       </a>
     </div>
   );
