@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Services from "./pages/Services";
 import ContactForm from "./Components/ContactForm";
 import AppDevelopment from "./pages/AppDevelopment";
+import SMO from "./pages/SMO";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/servise" element={<Services />} />
         <Route path="/app" element={<AppDevelopment />} />
+        <Route path="/smo" element={<SMO />} />
       </Routes>
       <ContactForm />
       <Footer />
