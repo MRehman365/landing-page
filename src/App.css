@@ -136,8 +136,9 @@ body {
 .contact-container {
   background: linear-gradient(90deg, white 70%, #2334de 30%);
   display: flex;
+  padding-right: 40px;
   flex-direction: column;
-  border-radius: 15px;
+  border-radius: 25px;
   overflow: hidden;
   width: 90%;
   margin: 0 auto;
@@ -147,7 +148,7 @@ body {
 .contact-content {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 20px;
   width: 100%;
 }
 
@@ -267,10 +268,10 @@ body {
 
 .map-container iframe {
   position: absolute;
-  top: 10%;
+  top: 2%;
   left: 0;
   width: 100%;
-  height: 80%;
+  height: 96%;
   border: none;
 }
 
@@ -420,4 +421,11 @@ body {
       110% 10%;
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
+}
+.header-smo{
+  background-image: url(./Assets/WhatsApp\ Image\ 2024-09-04\ at\ 12.53.53\ AM.jpeg);
+}
+.bg-app{
+  background-image: url(./Assets/line\ circle.svg);
+  background-repeat: no-repeat;
 }

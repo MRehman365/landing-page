@@ -280,7 +280,7 @@ const AppDevelopment = () => {
       </div>
 
       {/* section 3 */}
-      <div className="bg-[#1c1c1c] flex sm:flex-col lg:flex-row rounded-lg overflow-hidden md:w-[90%] mx-auto sm:py-[40px] md:py-[60px] md:px-[40px]">
+      <div className="bg-[#1c1c1c] bg-app flex sm:flex-col lg:flex-row rounded-lg overflow-hidden md:w-[90%] mx-auto sm:py-[40px] md:py-[60px] md:px-[40px]">
         <div className="flex flex-col sm:items-center lg:items-start sm:justify-center lg:justify-between mb-5">
         <div className=" space-y-4 mb-6 sm:text-center lg:text-left">
         <p className="text-[20px] text-[#5858ff]">OUR MODEL</p>
