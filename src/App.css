@@ -429,3 +429,20 @@ body {
   background-image: url(./Assets/line\ circle.svg);
   background-repeat: no-repeat;
 }
+.right-seo{
+  background-image: url(./Assets/SEO/19.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 430px;
+
+}
+
+@media (max-width:770px) {
+  .right-seo{
+    background-image: url(./Assets/SEO/19.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 300px;
+  
+  }
+}

@@ -49,17 +49,20 @@ const Navbar = () => {
 
           {/* Dropdown for Industries */}
           <div className="relative group">
-            <button className="flex items-center hover:text-gray-400 transition duration-300">
+          <Link
+              to="/seo"
+              className="flex items-center hover:text-gray-400 transition duration-300"
+            >
               Industries <MdExpandMore className="ml-1" />
-            </button>
-            <div className="absolute left-0 hidden group-hover:flex flex-col bg-white text-black mt-2 rounded shadow-lg w-48">
+            </Link>
+            {/* <div className="absolute left-0 hidden group-hover:flex flex-col bg-white text-black mt-2 rounded shadow-lg w-48">
               <a href="#" className="px-4 py-2 hover:bg-gray-100">
                 Industry 1
               </a>
               <a href="#" className="px-4 py-2 hover:bg-gray-100">
                 Industry 2
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Dropdown for Success Stories */}
