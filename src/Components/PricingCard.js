@@ -27,7 +27,7 @@ const PricingCard = ({ title, price, features, index, features2, color }) => {
       <h3 className=" text-2xl font-semibold">{title}</h3>
 
       <div className="flex justify-center items-baseline my-4">
-        <span className="mr-2 text-2xl font-extrabold">{price}</span>
+        <span className="mr-2 text-2xl font-semibold">{price}</span>
         <span className="text-gray-300 dark:text-gray-400">/month</span>
       </div>
       <div className="mb-2">

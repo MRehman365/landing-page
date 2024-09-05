@@ -243,9 +243,12 @@ const Home = () => {
     <div>
       <div className="flex flex-col-reverse lg:flex-row items-center justify-between p-2 bg-background">
         <div className="lg:w-1/2 p-4">
-          <span className="bg-[#2334de] text-[10px] text-white px-3 py-1">
-            IT SOLUTIONS ---
-          </span>
+        <div className="bg-[blue] uppercase text-white tracking-wider mb-4 text-[10px] flex text-center w-32 px-2 py-[2px] justify-between">
+            <span>IT SOLUTION </span>
+            <span className="w-10 mt-2">
+              <hr />
+            </span>
+          </div>
           <h2 className="text-6xl md:text-5xl sm:text-4xl mt-9 font-semibold text-black">
             Welcome To
           </h2>
@@ -279,7 +282,7 @@ const Home = () => {
       <div className="flex flex-col md:flex-row md:space-x-4 mt-8 w-[100%] mx-auto md:w-[90%]">
         {/* Left Side - Hidden in Mobile View */}
         <div className="flex w-full md:w-1/2 justify-end relative">
-          <div className="flex justify-center items-center gap-3 p-6 bg-[#2334de] absolute rounded-md top-20 left-0 text-white">
+          <div className="flex justify-center items-center gap-3 p-6 bg-[#2334de] absolute rounded-md top-20 left-10 text-white">
             <FaPeopleGroup size={30} />
             <p className="text-center text-sm">
               Years of
@@ -300,11 +303,11 @@ const Home = () => {
         </div>
 
         {/* Right Side - Visible in Mobile View */}
-        <div className="w-full md:w-1/2 p-4 md:p-8 sm:px-3 md:px-[30px]">
+        <div className="w-full md:w-1/2 p-4 md:p-8 sm:px-3 md:px-[50px]">
           <p className="text-[18px] font-[500] text-[gray]">
             <span className="text-[#2334de]">//</span> Get to Now
           </p>
-          <h1 className="text-2xl md:text-4xl font-bold mb-1">
+          <h1 className="text-2xl md:text-4xl font-bold mb-4 mt-4">
             Maxify Solutions
           </h1>
           <p className="text-sm text-justify  text-gray-600 mb-6">
@@ -323,7 +326,7 @@ const Home = () => {
               <div>
                 <MdImportantDevices className="text-[30px] text-[#2334de]" />
               </div>
-              <p className="font-semibold lg:text-[12px] md:text-[12px]">
+              <p className="font-semibold lg:text-[16px] md:text-[16px]">
                 Custom software development.
               </p>
             </div>
@@ -331,7 +334,7 @@ const Home = () => {
               <div>
                 <AiOutlineSolution className="text-[30px] text-[#2334de]" />
               </div>
-              <p className="font-semibold lg:text-[12px] md:text-[12px]">
+              <p className="font-semibold lg:text-[16px] md:text-[16px]">
                 Marketing Solution
               </p>
             </div>
@@ -443,7 +446,7 @@ const Home = () => {
             className="text-3xl  sm:none md:block text-[#2334de] transform rotate-180 hover:shadow-lg p-2 rounded-full"
           />
         </div>
-        <div className="flex justify-center mt-5 gap-2 flex-wrap">
+        <div className="flex justify-center gap-2 flex-wrap mt-12">
           <p className="sm:text-sm md:text-base text-center font-[500] bg-[#f3f3f3] p-3">
             Trust the experts for all your{" "}
             <span className="font-semibold">Web Development & Design</span>{" "}
@@ -555,11 +558,11 @@ const Home = () => {
       {/* last section */}
       <div className="flex flex-col md:flex-row md:space-x-4 mt-8 w-[100%] mx-auto md:w-[80%]">
         {/* Left Side - Hidden in Mobile View */}
-        <div className="w-full md:w-1/2 justify-center relative sm:hidden lg:flex">
+        <div className="w-full md:w-1/2 justify-end items-center relative sm:hidden lg:flex">
           <img
             src={img3}
             alt="Left Side"
-            className="w-[100%] object-cover h-auto"
+            className="w-[80%] object-cover h-[90%] rounded-lg"
           />
         </div>
 

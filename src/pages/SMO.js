@@ -13,6 +13,8 @@ import img2 from "../Assets/about-three-2.png.png";
 import img3 from "../Assets/about-three-3.png.png";
 import img4 from "../Assets/Image (13).png";
 import img5 from "../Assets/why-chose-us-two.png (1).png";
+import img6 from "../Assets/WhatsApp Image 2024-09-04 at 12.53.53 AM.jpeg";
+import PricingCard from "../Components/PricingCard";
 
 const SMO = () => {
   const [openItem, setOpenItem] = useState(null);
@@ -22,7 +24,7 @@ const SMO = () => {
   };
   return (
     <div>
-      <div className="bg-[#0a192f] text-white text-center flex flex-col items-center p-2 sm:py-[70px] md:py-[120px] justify-center">
+      <div className="header-smo text-white text-center flex flex-col items-center p-2 sm:py-[70px] md:py-[120px] justify-center" >
         <h1 className="sm:text-4xl md:text-6xl font-bold mb-4">
           Elevate Your Online Presence
         </h1>
@@ -281,11 +283,109 @@ const SMO = () => {
         />
       </div>
     </div>
+     {/* price section  */}
+     <div>
+        <section className="bg-white dark:bg-gray-900">
+          <div className="py-8 px-20 mx-auto lg:py-16 md:px-20 sm:px-2">
+            <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
+            <div>
+              <span className="mb-4 px-6 py-1 rounded-md text-4xl tracking-tight bg-[#dde7fa] font-semibold text-[blue] dark:text-white">
+                SMO Packages
+              </span>
+              </div>
+            </div>
+            <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+              {/* Starter Plan */}
+              <PricingCard
+                title="Basic"
+                price="RS-19999 / $249"
+                index={1}
+                color="bg-blue-600"
+                features={[
+                  "Setting Goals",
+                  "Account Management – 2 (FB & IG)",
+                  "Hashtag Research",
+                  "Content Strategy Creation",
+                  "Facebook Management",
+                ]}
+                features2={[
+                  "Page Creation",
+                  "Facebook Cover",
+                  "Profile Pic Creation",
+                  "Page Optimization",
+                  "Posting Per Week – 3",
+                  "Page Monitoring",
+                  "Call To Action Button Creation",
+                  "Instagram Management",
+                  "Engagement Strategy",
+                  "IGTV Upload (Video provided by Client)",
+                ]}
+              />
+              {/* Company Plan */}
+              <PricingCard
+                title="Advanced"
+                price="RS-29999  / $379"
+                index={2}
+                color="bg-black"
+                features={[
+                    "Setting Goals",
+                  "Account Management – 3",
+                  "Hashtag Research",
+                  "Content Strategy Creation",
+                  "Facebook Management",
+                ]}
+                features2={[
+                  "Page Creation",
+                  "Facebook Cover",
+                  "Profile Pic Creation",
+                  "Page Optimization",
+                  "Posting Per Week – 6",
+                  "Page Monitoring",
+                  "Call To Action Button Creation",
+                  "Instagram Management",
+                  "Engagement Strategy",
+                  "IGTV Upload (Video provided by Client)",
+                  "Facebook Story Creation",
+                  "Video Posting (Provide By Client)",
+                ]}
+              />
+              {/* Enterprise Plan */}
+              <PricingCard
+                title="Enterpriser"
+                price="RS-39999 / $499"
+                index={3}
+                color="bg-blue-600"
+                features={[
+                    "Setting Goals",
+                  "Account Management – 6",
+                  "Hashtag Research",
+                  "Content Strategy Creation",
+                  "Facebook Management",
+                ]}
+                features2={[
+                  "Page Creation",
+                  "Facebook Cover",
+                  "Profile Pic Creation",
+                  "Page Optimization",
+                  "Posting Per Week – 10",
+                  "Page Monitoring",
+                  "Call To Action Button Creation",
+                  "Instagram Management",
+                  "Engagement Strategy",
+                  "IGTV Upload (Video provided by Client)",
+                  "Facebook Story Creation",
+                  "Video Posting (Provide By Client)",
+                  "LinkedIn Management",
+                ]}
+              />
+            </div>
+          </div>
+        </section>
+      </div>
 
     {/* Section * */}
-    <div className="pt-10">
-      {/* Top Section */}
-      <div className="bg-white text-center">
+    <div className="pt-10 mt-10">
+      <div className=" text-center">
         <span className="inline-block px-4 py-1 text-sm font-medium text-blue-500 bg-blue-100 rounded-full mb-4">
           In The Digital Age
         </span>
